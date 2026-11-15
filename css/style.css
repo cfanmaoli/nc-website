@@ -692,3 +692,8 @@ code {
     padding: 1px 5px;
     font-size: 0.9em;
 }
+
+#languages_quality {
+    background: #f7f7f7;
+    padding-bottom: 70px;
+}

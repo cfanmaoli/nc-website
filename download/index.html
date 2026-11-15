@@ -7,7 +7,7 @@
     <meta name="description" content="Download Nimble Commander-Fork, a community fork of the classic dual-pane Mac file manager.">
     <meta name="author" content="Nimble Commander-Fork contributors">
     <title data-zh="下载 - Nimble Commander-Fork">Download - Nimble Commander-Fork</title>
-    <link rel="stylesheet" href="../css/style.css?v=6fb8de42">
+    <link rel="stylesheet" href="../css/style.css?v=3a5709b1">
     <link rel="icon" href="../favicon.ico" type="image/x-icon">
     <script src="../js/i18n.js?v=2d9467b3"></script>
 </head>
@@ -23,6 +23,7 @@
             <nav id="header_links">
                 <ul>
                     <li><a href="../download/" data-zh="下载">Download</a></li>
+                    <li><a href="../languages/" data-zh="语言">Languages</a></li>
                     <li><a href="../whats-new/" data-zh="更新内容">What's new</a></li>
                     <li><a href="../support/" data-zh="支持">Support</a></li>
                     <li><a href="https://github.com/cfanmaoli/nimble-commander" data-zh="源代码">Source</a></li>
@@ -87,23 +88,9 @@
     </section>
 
     <section>
-        <div id="languages_section">
-            <div class="container">
-                <h2 class="section_header" data-zh="语言">Languages</h2>
-                <p data-zh-html='应用内置英语和简体中文。其他语言的翻译收集在 &lt;a href="https://github.com/cfanmaoli/nc-language"&gt;nc-language&lt;/a&gt; 中。选择一种语言，按钮会直接打开对应的 JSON 文件。'>The app ships English and Simplified Chinese. Translations for other languages are collected in
-                    <a href="https://github.com/cfanmaoli/nc-language">nc-language</a>: pick a language below and
-                    the button opens its JSON file.</p>
-                <div class="language_picker">
-                    <label for="language_select" data-zh="选择界面语言：">Choose an interface language:</label>
-                    <select id="language_select">
-                        <option value="" data-zh="请选择语言…">Choose a language…</option>
-                    </select>
-                    <a id="language_download" class="language_download hrefbutton_common" href="#"
-                        aria-disabled="true" data-zh="下载语言文件">Download language file</a>
-                </div>
-                <p class="language_hint" data-zh-html='按钮会在新标签页打开该语言的 JSON 文件；保存后用 &lt;strong&gt;设置 → 语言 → 导入语言文件…&lt;/strong&gt; 导入，然后重启应用。'>The button opens the language's JSON file in a new tab; save it and import it via
-                    <strong>Preferences → Language → Import Language File…</strong>, then restart the app.</p>
-            </div>
+        <div class="container prose">
+            <p class="download_note" data-zh-html='需要其他界面语言？请到 &lt;a href="../languages/"&gt;多语言支持&lt;/a&gt; 页面下载语言文件。'>Looking for another interface language? See the
+                <a href="../languages/">Languages</a> page.</p>
         </div>
     </section>
 
@@ -116,7 +103,6 @@
                 contributors. GPLv3.</p>
         </div>
     </footer>
-    <script src="../js/language-picker.js?v=5abf2cab"></script>
 </body>
 
 </html>
