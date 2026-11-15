@@ -4,11 +4,12 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <meta name="description" content="Release notes for Nimble Commander-Fork.">
+    <meta name="description" content="Release notes for Nimble Commander-Fork." data-zh="Nimble Commander-Fork 的发行说明。">
     <meta name="author" content="Nimble Commander-Fork contributors">
-    <title>What's new - Nimble Commander-Fork</title>
+    <title data-zh="更新内容 - Nimble Commander-Fork">What's new - Nimble Commander-Fork</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <script src="../js/i18n.js"></script>
 </head>
 
 <body>
@@ -21,11 +22,12 @@
             </div>
             <nav id="header_links">
                 <ul>
-                    <li><a href="../download/">Download</a></li>
-                    <li><a href="../whats-new/">What's new</a></li>
-                    <li><a href="../support/">Support</a></li>
-                    <li><a href="https://github.com/cfanmaoli/nimble-commander">Source</a></li>
-                    <li><a href="https://github.com/cfanmaoli/nimble-commander/discussions">Discussions</a></li>
+                    <li><a href="../download/" data-zh="下载">Download</a></li>
+                    <li><a href="../whats-new/" data-zh="更新内容">What's new</a></li>
+                    <li><a href="../support/" data-zh="支持">Support</a></li>
+                    <li><a href="https://github.com/cfanmaoli/nimble-commander" data-zh="源代码">Source</a></li>
+                    <li><a href="https://github.com/cfanmaoli/nimble-commander/discussions" data-zh="讨论区">Discussions</a></li>
+                    <li><a href="#" id="nc_lang_toggle" class="lang_toggle">中文</a></li>
                 </ul>
             </nav>
         </div>
@@ -35,35 +37,35 @@
     <main>
         <section>
             <div class="container" id="whats_new">
-                <h2 class="section_header">History of changes</h2>
+                <h2 class="section_header" data-zh="更新历史">History of changes</h2>
 
-                <p>The complete, always up-to-date list lives in
+                <p data-zh-html='完整且始终最新的列表位于 &lt;a href="https://github.com/cfanmaoli/nimble-commander/blob/main/WHATS_NEW.md"&gt;WHATS_NEW.md&lt;/a&gt;，以及&lt;a href="https://github.com/cfanmaoli/nimble-commander/releases"&gt;发布页面&lt;/a&gt;。'>The complete, always up-to-date list lives in
                     <a href="https://github.com/cfanmaoli/nimble-commander/blob/main/WHATS_NEW.md">WHATS_NEW.md</a>
                     and on the <a href="https://github.com/cfanmaoli/nimble-commander/releases">releases page</a>.</p>
 
-                <h3>1.9.3 (2026):</h3>
+                <h3 data-zh="1.9.3（2026）：">1.9.3 (2026):</h3>
                 <ul>
-                    <li>Optional RAR support through the separate <code>ncrar-helper</code> component: solid
+                    <li data-zh-html='通过独立的 &lt;code&gt;ncrar-helper&lt;/code&gt; 组件提供可选 RAR 支持：固实归档、加密的文件头和数据、分卷集合；在&lt;em&gt;设置 → 压缩&lt;/em&gt;中有一个开关，并显示该组件的状态和版本。'>Optional RAR support through the separate <code>ncrar-helper</code> component: solid
                         archives, encrypted headers and payloads, multi-volume sets; a single switch in
                         <em>Preferences → Compression</em> with the component's status and version.</li>
-                    <li>Compression preferences: the default archive format (zip, 7z, tar), the algorithm and the
+                    <li data-zh="压缩偏好设置：默认归档格式（zip、7z、tar），以及压缩对话框使用的算法和级别。">Compression preferences: the default archive format (zip, 7z, tar), the algorithm and the
                         level used by the compress dialog.</li>
-                    <li>Third-party libraries rebuilt with the current toolchain; zlib updated to 1.4.</li>
-                    <li>Russian is no longer a built-in language; translations for other languages live in the
+                    <li data-zh="第三方库已用当前工具链重新构建；zlib 更新至 1.4。">Third-party libraries rebuilt with the current toolchain; zlib updated to 1.4.</li>
+                    <li data-zh-html='俄语不再是内置语言；其他语言的翻译位于 &lt;a href="https://github.com/cfanmaoli/nc-language"&gt;nc-language&lt;/a&gt; 仓库。'>Russian is no longer a built-in language; translations for other languages live in the
                         <a href="https://github.com/cfanmaoli/nc-language">nc-language</a> repository.</li>
                 </ul>
 
-                <h3>1.9.2 and earlier:</h3>
+                <h3 data-zh="1.9.2 及更早版本：">1.9.2 and earlier:</h3>
                 <ul>
-                    <li>Simplified Chinese localization out of the box (about 1,460 strings).</li>
-                    <li>Language packs: export the current interface strings, import a translation, switch
+                    <li data-zh="开箱即用的简体中文本地化（约 1,460 条字符串）。">Simplified Chinese localization out of the box (about 1,460 strings).</li>
+                    <li data-zh="语言包：导出当前界面字符串、导入翻译、无需重新构建应用即可切换语言。">Language packs: export the current interface strings, import a translation, switch
                         languages without rebuilding the app.</li>
-                    <li>Extra bundled themes: Solarized, Nord, Dracula, Gruvbox, One Dark, Tokyo Night, Catppuccin,
+                    <li data-zh="额外内置主题：Solarized、Nord、Dracula、Gruvbox、One Dark、Tokyo Night、Catppuccin、GitHub Dark 和 Monokai。">Extra bundled themes: Solarized, Nord, Dracula, Gruvbox, One Dark, Tokyo Night, Catppuccin,
                         GitHub Dark and Monokai.</li>
-                    <li>Flat view of an entire subtree, performance work on listings and the UI.</li>
+                    <li data-zh="整个子树的扁平视图，以及目录列表和 UI 的性能优化。">Flat view of an entire subtree, performance work on listings and the UI.</li>
                 </ul>
 
-                <p>The original <a href="https://magnumbytes.com/">Nimble Commander</a> release notes are on its
+                <p data-zh-html='原始 &lt;a href="https://magnumbytes.com/"&gt;Nimble Commander&lt;/a&gt; 的发行说明位于其网站。'>The original <a href="https://magnumbytes.com/">Nimble Commander</a> release notes are on its
                     website.</p>
             </div>
         </section>
@@ -71,7 +73,7 @@
 
     <footer>
         <div class="container">
-            <p>Nimble Commander-Fork is a community fork of <a href="https://magnumbytes.com/">Nimble Commander</a>
+            <p data-zh-html='Nimble Commander-Fork 是 &lt;a href="https://magnumbytes.com/"&gt;Nimble Commander&lt;/a&gt;（作者 Michael Kazakov）的社区分支。&lt;br&gt;版权所有 © 2026 Michael Kazakov；分支改动 © Nimble Commander-Fork 贡献者。GPLv3。'>Nimble Commander-Fork is a community fork of <a href="https://magnumbytes.com/">Nimble Commander</a>
                 by Michael Kazakov.<br>Copyright © 2026 Michael Kazakov; fork changes © the Nimble Commander-Fork
                 contributors. GPLv3.</p>
         </div>

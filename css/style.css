@@ -487,3 +487,24 @@ footer p {
         display: none;
     }
 }
+
+/**************************************** Language switch ****************************************/
+
+header nav#header_links a.lang_toggle {
+    border: 1px solid #c6c6c6;
+    border-radius: 3px;
+    padding: 0px 6px;
+    font-size: 13px;
+    vertical-align: 2px;
+    transition: 0.2s;
+}
+
+header nav#header_links a.lang_toggle:hover {
+    background-color: #dcdcdc;
+}
+
+/* Set by js/i18n.js while a stored Chinese preference is being applied,
+   to avoid a flash of the English text on page load. */
+html.nc_i18n_pending body {
+    visibility: hidden;
+}
