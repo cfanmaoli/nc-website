@@ -592,7 +592,7 @@ a.language_download[aria-disabled="true"] {
     padding-bottom: 70px;
 }
 
-.install_grid {
+.card_grid {
     display: flex;
     flex-wrap: wrap;
     gap: 24px;
@@ -601,24 +601,42 @@ a.language_download[aria-disabled="true"] {
     margin: 18px auto 8px;
 }
 
-.install_card {
-    flex: 1 1 320px;
+.card {
+    flex: 1 1 240px;
     background: #ffffff;
     border: 1px solid #e4e4e4;
     border-radius: 6px;
     padding: 18px 22px;
 }
 
-.install_card h3 {
+.card h3 {
     font-size: 17px;
     margin: 0 0 8px;
     color: #303040;
 }
 
-.install_card p {
+.card p {
     font-size: 15px;
     line-height: 1.6;
     margin: 0;
+}
+
+.prose {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.prose p,
+.prose li {
+    line-height: 1.7;
+}
+
+.prose ul {
+    padding-left: 22px;
+}
+
+.prose > h3 {
+    margin-top: 32px;
 }
 
 .install_note {
