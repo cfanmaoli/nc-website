@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Release notes for Nimble Commander-Fork.">
+    <meta name="author" content="Nimble Commander-Fork contributors">
+    <title>What's new - Nimble Commander-Fork</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <a href="../">
+                    <h1>Nimble Commander-Fork</h1>
+                </a>
+            </div>
+            <nav id="header_links">
+                <ul>
+                    <li><a href="../download/">Download</a></li>
+                    <li><a href="../whats-new/">What's new</a></li>
+                    <li><a href="../support/">Support</a></li>
+                    <li><a href="https://github.com/cfanmaoli/nimble-commander">Source</a></li>
+                    <li><a href="https://github.com/cfanmaoli/nimble-commander/discussions">Discussions</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div id="header_fix_space"></div>
+
+    <main>
+        <section>
+            <div class="container" id="whats_new">
+                <h2 class="section_header">History of changes</h2>
+
+                <p>The complete, always up-to-date list lives in
+                    <a href="https://github.com/cfanmaoli/nimble-commander/blob/main/WHATS_NEW.md">WHATS_NEW.md</a>
+                    and on the <a href="https://github.com/cfanmaoli/nimble-commander/releases">releases page</a>.</p>
+
+                <h3>1.9.3 (2026):</h3>
+                <ul>
+                    <li>Optional RAR support through the separate <code>ncrar-helper</code> component: solid
+                        archives, encrypted headers and payloads, multi-volume sets; a single switch in
+                        <em>Preferences → Compression</em> with the component's status and version.</li>
+                    <li>Compression preferences: the default archive format (zip, 7z, tar), the algorithm and the
+                        level used by the compress dialog.</li>
+                    <li>Third-party libraries rebuilt with the current toolchain; zlib updated to 1.4.</li>
+                    <li>Russian is no longer a built-in language; translations for other languages live in the
+                        <a href="https://github.com/cfanmaoli/nc-language">nc-language</a> repository.</li>
+                </ul>
+
+                <h3>1.9.2 and earlier:</h3>
+                <ul>
+                    <li>Simplified Chinese localization out of the box (about 1,460 strings).</li>
+                    <li>Language packs: export the current interface strings, import a translation, switch
+                        languages without rebuilding the app.</li>
+                    <li>Extra bundled themes: Solarized, Nord, Dracula, Gruvbox, One Dark, Tokyo Night, Catppuccin,
+                        GitHub Dark and Monokai.</li>
+                    <li>Flat view of an entire subtree, performance work on listings and the UI.</li>
+                </ul>
+
+                <p>The original <a href="https://magnumbytes.com/">Nimble Commander</a> release notes are on its
+                    website.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Nimble Commander-Fork is a community fork of <a href="https://magnumbytes.com/">Nimble Commander</a>
+                by Michael Kazakov.<br>Copyright © 2026 Michael Kazakov; fork changes © the Nimble Commander-Fork
+                contributors. GPLv3.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

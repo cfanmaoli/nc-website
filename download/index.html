@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Download Nimble Commander-Fork, a community fork of the classic dual-pane Mac file manager.">
+    <meta name="author" content="Nimble Commander-Fork contributors">
+    <title>Download - Nimble Commander-Fork</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <a href="../">
+                    <h1>Nimble Commander-Fork</h1>
+                </a>
+            </div>
+            <nav id="header_links">
+                <ul>
+                    <li><a href="../download/">Download</a></li>
+                    <li><a href="../whats-new/">What's new</a></li>
+                    <li><a href="../support/">Support</a></li>
+                    <li><a href="https://github.com/cfanmaoli/nimble-commander">Source</a></li>
+                    <li><a href="https://github.com/cfanmaoli/nimble-commander/discussions">Discussions</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div id="header_fix_space"></div>
+
+    <main>
+
+    <section>
+        <div class="container" id="direct_download">
+            <h2 class="section_header">Direct download</h2>
+            <p>Nimble Commander-Fork is published on GitHub Releases: download the latest .dmg, and check it
+                against the .sha256 file on the same page.<br>
+                The build is for Apple Silicon only and requires macOS 12 or later.</p>
+            <a href="https://github.com/cfanmaoli/nimble-commander/releases/latest"
+                class="download_direct hrefbutton_common">DOWNLOAD</a>
+        </div>
+    </section>
+
+    <section>
+        <div id="installation_and_uninstallation">
+            <div class="container">
+                <h2 class="section_header">Installation and uninstallation</h2>
+                <table id="installation_and_uninstallation_table">
+                    <tr>
+                        <td><strong>To install Nimble Commander-Fork</strong> open the downloaded .dmg and drag
+                            “Nimble Commander-Fork.app” to the Applications folder.</td>
+                        <td><strong>To uninstall it</strong> select the app in Applications using Finder and choose
+                            “Move to Trash” from the context menu.</td>
+                    </tr>
+                </table>
+                <p>The build is not notarised. If macOS blocks it after a download, either right-click the app and
+                    choose “Open” once, or clear the quarantine attribute:</p>
+                <pre><code>xattr -dr com.apple.quarantine "/Applications/Nimble Commander-Fork.app"</code></pre>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2 class="section_header">Optional RAR support</h2>
+            <p>RAR archives are read by the built-in reader out of the box. For solid archives, encrypted headers
+                and multi-volume sets, install the separate
+                <a href="https://github.com/cfanmaoli/ncrar-helper">ncrar-helper</a> component: it is an
+                independent program under the UnRAR license, so the application itself still contains no
+                proprietary code. After installing it, enable it in
+                <strong>Preferences → Compression</strong>; the same pane shows whether it is installed and which
+                version it is.</p>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2 class="section_header">Languages</h2>
+            <p>The app ships English and Simplified Chinese. Translations for other languages are collected in
+                <a href="https://github.com/cfanmaoli/nc-language">nc-language</a>: download the JSON file for your
+                language, import it via <strong>Preferences → Language → Import Language File…</strong> and
+                restart. A partial translation is fine.</p>
+        </div>
+    </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Nimble Commander-Fork is a community fork of <a href="https://magnumbytes.com/">Nimble Commander</a>
+                by Michael Kazakov.<br>Copyright © 2026 Michael Kazakov; fork changes © the Nimble Commander-Fork
+                contributors. GPLv3.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
