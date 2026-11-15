@@ -4,12 +4,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <meta name="description" content="Download Nimble Commander-Fork, a community fork of the classic dual-pane Mac file manager." data-zh="下载 Nimble Commander-Fork，经典双窗格 Mac 文件管理器的社区分支。">
+    <meta name="description" content="Download Nimble Commander-Fork, a community fork of the classic dual-pane Mac file manager.">
     <meta name="author" content="Nimble Commander-Fork contributors">
     <title data-zh="下载 - Nimble Commander-Fork">Download - Nimble Commander-Fork</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="icon" href="../favicon.ico" type="image/x-icon">
-    <script src="../js/i18n.js"></script>
 </head>
 
 <body>
@@ -39,11 +38,11 @@
     <section>
         <div class="container" id="direct_download">
             <h2 class="section_header" data-zh="直接下载">Direct download</h2>
-            <p data-zh-html='Nimble Commander-Fork 发布在 GitHub Releases 上：下载最新的 .dmg，并与同一页面上的 .sha256 文件核对。&lt;br&gt;该构建仅适用于 Apple Silicon，需要 macOS 12 或更新版本。'>Nimble Commander-Fork is published on GitHub Releases: download the latest .dmg, and check it
-                against the .sha256 file on the same page.<br>
-                The build is for Apple Silicon only and requires macOS 12 or later.</p>
+            <p class="download_meta" data-zh="最新版本 · .dmg 约 12 MB · 需要 macOS 12 或更新版本 · Apple Silicon">Latest release &middot; .dmg about 12 MB &middot; macOS 12 or later &middot; Apple Silicon</p>
             <a href="https://github.com/cfanmaoli/nimble-commander/releases/latest"
                 class="download_direct hrefbutton_common" data-zh="下载">DOWNLOAD</a>
+            <p class="download_note" data-zh-html='.dmg 和用于校验的 .sha256 文件都在 &lt;a href="https://github.com/cfanmaoli/nimble-commander/releases"&gt;GitHub Releases&lt;/a&gt; 上。'>The .dmg and its .sha256 checksum are published on
+                <a href="https://github.com/cfanmaoli/nimble-commander/releases">GitHub Releases</a>.</p>
         </div>
     </section>
 
@@ -51,15 +50,18 @@
         <div id="installation_and_uninstallation">
             <div class="container">
                 <h2 class="section_header" data-zh="安装与卸载">Installation and uninstallation</h2>
-                <table id="installation_and_uninstallation_table">
-                    <tr>
-                        <td data-zh-html='&lt;strong&gt;安装 Nimble Commander-Fork&lt;/strong&gt;：打开下载的 .dmg，将“Nimble Commander-Fork.app”拖到“应用程序”文件夹。'><strong>To install Nimble Commander-Fork</strong> open the downloaded .dmg and drag
-                            “Nimble Commander-Fork.app” to the Applications folder.</td>
-                        <td data-zh-html='&lt;strong&gt;卸载它&lt;/strong&gt;：在 Finder 的“应用程序”中选中该应用，然后从上下文菜单中选择“移到废纸篓”。'><strong>To uninstall it</strong> select the app in Applications using Finder and choose
-                            “Move to Trash” from the context menu.</td>
-                    </tr>
-                </table>
-                <p data-zh="该构建未经过公证。如果 macOS 在下载后阻止其运行，可以右键点按该应用并选择一次“打开”，或者清除隔离属性：">The build is not notarised. If macOS blocks it after a download, either right-click the app and
+                <div class="install_grid">
+                    <div class="install_card">
+                        <h3 data-zh="安装">To install</h3>
+                        <p data-zh-html='打开下载的 .dmg，把“Nimble Commander-Fork.app”拖进“应用程序”文件夹。'>Open the downloaded .dmg and drag “Nimble Commander-Fork.app” into the
+                            Applications folder.</p>
+                    </div>
+                    <div class="install_card">
+                        <h3 data-zh="卸载">To uninstall</h3>
+                        <p data-zh-html='在 Finder 的“应用程序”中选中该应用，然后选择“移到废纸篓”。'>Select the app in Applications in Finder and choose “Move to Trash”.</p>
+                    </div>
+                </div>
+                <p class="install_note" data-zh="该构建未经过公证。如果 macOS 在下载后阻止其运行，可以右键点按该应用并选择一次“打开”，或者清除隔离属性：">The build is not notarised. If macOS blocks it after a download, either right-click the app and
                     choose “Open” once, or clear the quarantine attribute:</p>
                 <pre><code>xattr -dr com.apple.quarantine "/Applications/Nimble Commander-Fork.app"</code></pre>
             </div>
@@ -67,34 +69,40 @@
     </section>
 
     <section>
-        <div class="container">
-            <h2 class="section_header" data-zh="可选的 RAR 支持">Optional RAR support</h2>
-            <p data-zh-html='内置读取器开箱即可读取 RAR 归档。对于固实归档、加密的文件头和分卷集合，请安装独立的 &lt;a href="https://github.com/cfanmaoli/ncrar-helper"&gt;ncrar-helper&lt;/a&gt; 组件：它是一个遵循 UnRAR 许可证的独立程序，因此应用本身依然不含任何专有代码。安装后，在&lt;strong&gt;设置 → 压缩&lt;/strong&gt;中启用它；同一面板会显示它是否已安装以及版本号。'>RAR archives are read by the built-in reader out of the box. For solid archives, encrypted headers
-                and multi-volume sets, install the separate
-                <a href="https://github.com/cfanmaoli/ncrar-helper">ncrar-helper</a> component: it is an
-                independent program under the UnRAR license, so the application itself still contains no
-                proprietary code. After installing it, enable it in
-                <strong>Preferences → Compression</strong>; the same pane shows whether it is installed and which
-                version it is.</p>
+        <div id="rar_support">
+            <div class="container">
+                <h2 class="section_header" data-zh="可选的 RAR 支持">Optional RAR support</h2>
+                <p data-zh-html='内置读取器开箱即可读取 RAR 归档。对于固实归档、加密的文件头和分卷集合，请安装独立的 &lt;a href="https://github.com/cfanmaoli/ncrar-helper"&gt;ncrar-helper&lt;/a&gt; 组件：它是一个遵循 UnRAR 许可证的独立程序，因此应用本身依然不含任何专有代码。安装后，在&lt;strong&gt;设置 → 压缩&lt;/strong&gt;中启用它；同一面板会显示它是否已安装以及版本号。'>RAR archives are read by the built-in reader out of the box. For solid archives, encrypted headers
+                    and multi-volume sets, install the separate
+                    <a href="https://github.com/cfanmaoli/ncrar-helper">ncrar-helper</a> component: it is an
+                    independent program under the UnRAR license, so the application itself still contains no
+                    proprietary code. After installing it, enable it in
+                    <strong>Preferences → Compression</strong>; the same pane shows whether it is installed and
+                    which version it is.</p>
+                <p class="install_note" data-zh="该组件同样未经过公证，如果被 macOS 隔离，可以清除它的隔离属性：">The component is not notarised either; if macOS quarantines it, clear the attribute as well:</p>
+                <pre><code>xattr -dr com.apple.quarantine /Applications/ncrar-helper.app</code></pre>
+            </div>
         </div>
     </section>
 
     <section>
-        <div class="container">
-            <h2 class="section_header" data-zh="语言">Languages</h2>
-            <p data-zh-html='应用内置英语和简体中文。其他语言的翻译收集在 &lt;a href="https://github.com/cfanmaoli/nc-language"&gt;nc-language&lt;/a&gt; 中。选择一种语言，按钮会直接打开对应的 JSON 文件。'>The app ships English and Simplified Chinese. Translations for other languages are collected in
-                <a href="https://github.com/cfanmaoli/nc-language">nc-language</a>: pick a language below and
-                the button opens its JSON file.</p>
-            <div class="language_picker">
-                <label for="language_select" data-zh="选择界面语言：">Choose an interface language:</label>
-                <select id="language_select">
-                    <option value="" data-zh="请选择语言…">Choose a language…</option>
-                </select>
-                <a id="language_download" class="language_download hrefbutton_common" href="#"
-                    aria-disabled="true" data-zh="下载语言文件">Download language file</a>
+        <div id="languages_section">
+            <div class="container">
+                <h2 class="section_header" data-zh="语言">Languages</h2>
+                <p data-zh-html='应用内置英语和简体中文。其他语言的翻译收集在 &lt;a href="https://github.com/cfanmaoli/nc-language"&gt;nc-language&lt;/a&gt; 中。选择一种语言，按钮会直接打开对应的 JSON 文件。'>The app ships English and Simplified Chinese. Translations for other languages are collected in
+                    <a href="https://github.com/cfanmaoli/nc-language">nc-language</a>: pick a language below and
+                    the button opens its JSON file.</p>
+                <div class="language_picker">
+                    <label for="language_select" data-zh="选择界面语言：">Choose an interface language:</label>
+                    <select id="language_select">
+                        <option value="" data-zh="请选择语言…">Choose a language…</option>
+                    </select>
+                    <a id="language_download" class="language_download hrefbutton_common" href="#"
+                        aria-disabled="true" data-zh="下载语言文件">Download language file</a>
+                </div>
+                <p class="language_hint" data-zh-html='按钮会在新标签页打开该语言的 JSON 文件；保存后用 &lt;strong&gt;设置 → 语言 → 导入语言文件…&lt;/strong&gt; 导入，然后重启应用。'>The button opens the language's JSON file in a new tab; save it and import it via
+                    <strong>Preferences → Language → Import Language File…</strong>, then restart the app.</p>
             </div>
-            <p class="language_hint" data-zh-html='按钮会在新标签页打开该语言的 JSON 文件；保存后用 &lt;strong&gt;设置 → 语言 → 导入语言文件…&lt;/strong&gt; 导入，然后重启应用。'>The button opens the language's JSON file in a new tab; save it and import it via
-                <strong>Preferences → Language → Import Language File…</strong>, then restart the app.</p>
         </div>
     </section>
 

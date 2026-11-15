@@ -567,3 +567,110 @@ a.language_download[aria-disabled="true"] {
     color: #6b6b6b;
     margin-top: 14px;
 }
+
+/**************************************** Download page ******************************************/
+
+#direct_download {
+    text-align: center;
+    padding-bottom: 40px;
+}
+
+.download_meta {
+    font-size: 15px;
+    color: #6b6b6b;
+    margin: 6px 0 28px;
+}
+
+.download_note {
+    font-size: 13px;
+    color: #6b6b6b;
+    margin-top: 18px;
+}
+
+#installation_and_uninstallation {
+    background: #f7f7f7;
+    padding-bottom: 70px;
+}
+
+.install_grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: center;
+    max-width: 880px;
+    margin: 18px auto 8px;
+}
+
+.install_card {
+    flex: 1 1 320px;
+    background: #ffffff;
+    border: 1px solid #e4e4e4;
+    border-radius: 6px;
+    padding: 18px 22px;
+}
+
+.install_card h3 {
+    font-size: 17px;
+    margin: 0 0 8px;
+    color: #303040;
+}
+
+.install_card p {
+    font-size: 15px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.install_note {
+    font-size: 14px;
+    color: #4a4a4a;
+    margin: 26px auto 0;
+    max-width: 760px;
+}
+
+#rar_support {
+    padding-bottom: 50px;
+}
+
+#rar_support .container,
+#languages_section .container {
+    max-width: 900px;
+}
+
+#languages_section {
+    background: #f7f7f7;
+    padding-bottom: 70px;
+}
+
+pre,
+code {
+    font-family: "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+}
+
+pre {
+    background: #ffffff;
+    border: 1px solid #d9d9d9;
+    border-radius: 6px;
+    padding: 14px 18px;
+    margin: 16px auto 0;
+    max-width: 760px;
+    overflow-x: auto;
+    font-size: 13px;
+    line-height: 1.6;
+    text-align: left;
+    color: #262626;
+}
+
+pre code {
+    background: none;
+    padding: 0;
+    border: none;
+    font-size: inherit;
+}
+
+code {
+    background: #f2f2f2;
+    border-radius: 3px;
+    padding: 1px 5px;
+    font-size: 0.9em;
+}
