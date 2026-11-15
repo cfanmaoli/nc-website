@@ -81,8 +81,18 @@ header {
     color: #616161;
 }
 
-header #branding{
-    float: left;
+header .container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    row-gap: 2px;
+    column-gap: 20px;
+}
+
+header #branding {
+    float: none;
+    margin-right: auto;
 } 
 
 header h1 {
@@ -92,19 +102,24 @@ header h1 {
 }
 
 header nav {
-    float: right;
-    margin-top: 10px;
+    float: none;
+    margin-top: 0;
+    margin-left: auto;
 }
 
 header ul {
-    list-style-type: none;    
+    list-style-type: none;
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
 }
 
 header li {
     display: inline;
-    padding: 8px;
+    padding: 6px;
 }
 
 header div#branding a{
@@ -119,7 +134,7 @@ header  h1{
 
 header nav#header_links a{
     color:inherit;
-    font-size: 15px;
+    font-size: 14px;
     text-decoration: none;
     text-transform: uppercase;
 }
@@ -696,4 +711,10 @@ code {
 #languages_quality {
     background: #f7f7f7;
     padding-bottom: 70px;
+}
+
+@media (max-width: 1280px) {
+    header h1 {
+        font-size: 22px;
+    }
 }

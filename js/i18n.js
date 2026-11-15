@@ -138,6 +138,14 @@
         revealPage();
     }
 
+    // The header is fixed and can wrap onto a second line when the navigation is wide; keep the
+    // spacer in sync so that the page content never hides underneath it.
+    function syncHeaderSpace() {
+        var header = document.querySelector('header');
+        var spacer = document.getElementById('header_fix_space');
+        if (header && spacer) spacer.style.height = header.offsetHeight + 'px';
+    }
+
     function boot() {
         try {
             init();
@@ -145,6 +153,9 @@
             revealPage();
             if (window.console && window.console.error) window.console.error(e);
         }
+        syncHeaderSpace();
+        window.addEventListener('resize', syncHeaderSpace);
+        window.addEventListener('load', syncHeaderSpace);
     }
 
     if (document.readyState === 'loading') {
