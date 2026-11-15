@@ -160,6 +160,16 @@ footer p {
 
 }
 
+/* Chinese text: use the system CJK font and slightly roomier lines, so the hero does not look
+   cramped next to the Latin typography. */
+html[data-nc-lang="zh"] body {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "Helvetica Neue", sans-serif;
+}
+
+html[data-nc-lang="zh"] #showcase_slogan {
+    line-height: 1.5;
+}
+
 #showcase p.fork_note {
     font-size: 15px;
     line-height: 1.5;
