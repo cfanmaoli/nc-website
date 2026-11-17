@@ -42,6 +42,25 @@
                     <a href="https://github.com/cfanmaoli/nimble-commander/blob/main/WHATS_NEW.md">WHATS_NEW.md</a>
                     and on the <a href="https://github.com/cfanmaoli/nimble-commander/releases">releases page</a>.</p>
 
+                <h3 data-zh="1.9.3a（2026）：">1.9.3a (2026):</h3>
+                <ul>
+                    <li data-zh-html='回收站更安全：清空时拒绝经过符号链接或挂载点的 &lt;code&gt;.Trashes&lt;/code&gt; 链，并通过固定的目录描述符删除；“放回原处”会重新校验解析后的目标路径。'>Safer Trash: emptying refuses a <code>.Trashes</code> chain that leads through a symlink or a
+                        mount point and deletes through pinned directory descriptors; “Put Back” re-checks
+                        the resolved destination.</li>
+                    <li data-zh="目录在读取过程中发生变化时，追加的条目始终按显示比较器排序——非 ASCII 名称和显示名不同的条目不会再排错位置。">When a directory changes while it is being read, the appended entries are always sorted with
+                        the display comparator - names with non-ASCII characters or a different display form
+                        can no longer land in the wrong place.</li>
+                    <li data-zh="修复卷卸载与后台目录监听注册之间的死锁。">Fixed a deadlock between the volume-unmount handler and background watch registration.</li>
+                    <li data-zh="RAR 组件加固：协议版本协商、list/link/read 超时上限、启动时不继承应用的打开描述符；组件失败时自动回落到内置读取器。">RAR component hardening: protocol negotiation, bounded list/link/read timeouts, no inherited
+                        file descriptors; a failing component falls back to the built-in reader.</li>
+                    <li data-zh="压缩设置失败时释放归档对象并删除写了一半的文件。">A failed compression setup now releases the archive and removes the half-written file.</li>
+                    <li data-zh-html='语言包按参数位置和精确类型校验：文本里的字面百分号不再让合法翻译被跳过，&lt;code&gt;%n&lt;/code&gt; 或参数不匹配仍会被拒绝。'>Language packs are validated by argument position and exact conversion type: literal percent
+                        signs no longer cause valid translations to be skipped, while <code>%n</code> or a
+                        mismatched argument is still refused.</li>
+                    <li data-zh="这个补丁版本的本地构建用开发证书签名，因此在开了管理员模式的机器上也能安装特权助手。">This patch release is signed with a development certificate, so Administrator Mode and its
+                        privileged helper work in the packaged build as well.</li>
+                </ul>
+
                 <h3 data-zh="1.9.3（2026）：">1.9.3 (2026):</h3>
                 <ul>
                     <li data-zh-html='通过独立的 &lt;code&gt;ncrar-helper&lt;/code&gt; 组件提供可选 RAR 支持：固实归档、加密的文件头和数据、分卷集合；在&lt;em&gt;设置 → 压缩&lt;/em&gt;中有一个开关，并显示该组件的状态和版本。'>Optional RAR support through the separate <code>ncrar-helper</code> component: solid
