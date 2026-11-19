@@ -42,6 +42,24 @@
                     <a href="https://github.com/cfanmaoli/nimble-commander/blob/main/WHATS_NEW.md">WHATS_NEW.md</a>
                     and on the <a href="https://github.com/cfanmaoli/nimble-commander/releases">releases page</a>.</p>
 
+                <h3 data-zh="1.9.3b（2026）：">1.9.3b (2026):</h3>
+                <ul>
+                    <li data-zh-html='新增“导入设置”：在 &lt;em&gt;设置 → 通用&lt;/em&gt; 中可从原版 Nimble Commander 导入偏好设置、已保存的标签页、网络连接、语言包和语法高亮；导入前会备份当前设置，应用重启后生效。'>New “Import settings”: <em>Preferences → General</em> can import preferences, saved tabs,
+                        network connections, language packs and syntax highlighting from the original
+                        Nimble Commander app; the current settings are backed up first and the app
+                        restarts afterwards.</li>
+                    <li data-zh="压缩目标改为排他创建：如果扫描后选中的名称已被占用，会自动改用下一个可用名称；失败清理只删除本任务创建的文件。">Compression targets are claimed exclusively: if the chosen name is taken after the scan, the
+                        next free name is used, and failure cleanup only removes files created by the job.</li>
+                    <li data-zh-html='语言包校验拒绝动态宽度/精度（&lt;code&gt;%*d&lt;/code&gt;、&lt;code&gt;%.*f&lt;/code&gt;），不再把它们当作字面百分号；更新源的下载缓存按资源 ID 和摘要校验。'>Language-pack validation rejects dynamic width/precision
+                        (<code>%*d</code>, <code>%.*f</code>) instead of treating them as literal percent
+                        signs; the update feed cache is keyed by asset ID and verified by digest.</li>
+                    <li data-zh="修复 nightly CI 中假 helper 测试遗留缓存的问题；未签名构建现在与发布版使用相同的应用名和可执行文件名，共享同一个配置目录。">Fixed the fake-helper test that left a stale helper cache and failed the nightly CI; the
+                        Unsigned build now produces the same app and executable name as the release build,
+                        so they share one configuration directory.</li>
+                    <li data-zh="此版本使用开发证书签名，可以正常打开管理员模式。">This release is signed with a development certificate, so Administrator Mode can be enabled
+                        normally.</li>
+                </ul>
+
                 <h3 data-zh="1.9.3a（2026）：">1.9.3a (2026):</h3>
                 <ul>
                     <li data-zh-html='回收站更安全：清空时拒绝经过符号链接或挂载点的 &lt;code&gt;.Trashes&lt;/code&gt; 链，并通过固定的目录描述符删除；“放回原处”会重新校验解析后的目标路径。'>Safer Trash: emptying refuses a <code>.Trashes</code> chain that leads through a symlink or a
