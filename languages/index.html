@@ -3,60 +3,61 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <meta name="description" content="Language packs for Nimble Commander-Fork.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
+    <meta name="description" content="Language packs for Nimble Commander-Fork." data-zh="Nimble Commander-Fork 的多语言包下载与说明。">
     <meta name="author" content="Nimble Commander-Fork contributors">
     <title data-zh="多语言支持 - Nimble Commander-Fork">Languages - Nimble Commander-Fork</title>
-    <link rel="stylesheet" href="../css/style.css?v=faf4715b">
+    <link rel="stylesheet" href="../css/style.css?v=20261127">
     <link rel="icon" href="../favicon.ico" type="image/x-icon">
-    <script src="../js/i18n.js?v=1741791a"></script>
+    <script src="../js/i18n.js?v=20261127"></script>
 </head>
 
 <body>
-    <header>
-        <div class="container">
-            <div id="branding">
-                <a href="../">
-                    <h1>Nimble Commander-Fork</h1>
-                </a>
-            </div>
-            <nav id="header_links">
-                <ul>
+    <a href="#main-heading" class="skip-link visually-hidden" data-zh="跳至正文">Skip to content</a>
+
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="site-brand" href="../">Nimble Commander-Fork</a>
+            <nav class="site-nav" aria-label="Primary" data-zh-aria-label="主导航">
+                <button class="menu-button" type="button" popovertarget="site-menu" popovertargetaction="toggle" aria-controls="site-menu">
+                    <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                        <path d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                    <span data-zh="菜单">Menu</span>
+                </button>
+                <ul id="site-menu" class="site-menu" popover="auto">
                     <li><a href="../download/" data-zh="下载">Download</a></li>
-                    <li><a href="../languages/" data-zh="语言">Languages</a></li>
+                    <li><a href="../languages/" aria-current="page" data-zh="语言">Languages</a></li>
                     <li><a href="../whats-new/" data-zh="更新内容">What's new</a></li>
                     <li><a href="../support/" data-zh="支持">Support</a></li>
-                    <li><a href="#" id="nc_lang_toggle" class="lang_toggle">中文</a></li>
+                    <li><button type="button" id="nc_lang_toggle" class="lang_toggle" lang="zh-Hans" aria-label="切换到简体中文">中文</button></li>
                 </ul>
             </nav>
         </div>
     </header>
-    <div id="header_fix_space"></div>
 
     <main>
-
-    <section>
-        <div class="container prose">
-            <h2 class="section_header" data-zh="多语言支持">Multilingual support</h2>
-            <p data-zh-html='应用内置英语和简体中文。其他语言的翻译由社区维护，集中在 &lt;a href="https://github.com/cfanmaoli/nc-language"&gt;nc-language&lt;/a&gt; 仓库。选择一种语言，按钮会直接打开对应的 JSON 文件。'>The app ships English and Simplified Chinese. Translations for other languages are community-maintained
-                and collected in <a href="https://github.com/cfanmaoli/nc-language">nc-language</a>: pick a
-                language below and the button opens its JSON file.</p>
-            <div class="language_picker">
-                <label for="language_select" data-zh="选择界面语言：">Choose an interface language:</label>
-                <select id="language_select">
-                    <option value="" data-zh="请选择语言…">Choose a language…</option>
-                </select>
-                <a id="language_download" class="language_download hrefbutton_common" href="#"
-                    aria-disabled="true" data-zh="下载语言文件">Download language file</a>
+        <section class="section_band">
+            <div class="prose">
+                <h1 id="main-heading" class="section_header" tabindex="-1" data-zh="多语言支持">Multilingual support</h1>
+                <p data-zh-html='应用内置英语和简体中文。其他语言的翻译由社区维护，集中在 &lt;a href="https://github.com/cfanmaoli/nc-language"&gt;nc-language&lt;/a&gt; 仓库。选择一种语言，按钮会直接打开对应的 JSON 文件。'>The app ships English and Simplified Chinese. Translations for other languages are community-maintained
+                    and collected in <a href="https://github.com/cfanmaoli/nc-language">nc-language</a>: pick a
+                    language below and the button opens its JSON file.</p>
+                <div class="language_picker">
+                    <label for="language_select" data-zh="选择界面语言：">Choose an interface language:</label>
+                    <select id="language_select">
+                        <option value="" data-zh="请选择语言…">Choose a language…</option>
+                    </select>
+                    <a id="language_download" class="language_download hrefbutton_common" href="#" aria-disabled="true" data-zh="下载语言文件">Download language file</a>
+                </div>
+                <p class="language_hint" data-zh-html='按钮会在新标签页打开该语言的 JSON 文件；保存后用 &lt;strong&gt;设置 → 语言 → 导入语言文件…&lt;/strong&gt; 导入，然后重启应用。'>The button opens the language's JSON file in a new tab; save it and import it via
+                    <strong>Preferences → Language → Import Language File…</strong>, then restart the app.</p>
             </div>
-            <p class="language_hint" data-zh-html='按钮会在新标签页打开该语言的 JSON 文件；保存后用 &lt;strong&gt;设置 → 语言 → 导入语言文件…&lt;/strong&gt; 导入，然后重启应用。'>The button opens the language's JSON file in a new tab; save it and import it via
-                <strong>Preferences → Language → Import Language File…</strong>, then restart the app.</p>
-        </div>
-    </section>
+        </section>
 
-    <section>
-        <div id="languages_quality">
-            <div class="container prose">
+        <section class="section_band section_band--tinted" id="languages_quality">
+            <div class="prose">
                 <h2 class="section_header" data-zh="关于翻译质量">About the translations</h2>
                 <p data-zh-html='这些翻译大部分由机器翻译生成，尚未经过母语者校对，可能存在错误或不自然的表述。如果你发现并修正了问题，欢迎到 &lt;a href="https://github.com/cfanmaoli/nc-language"&gt;nc-language&lt;/a&gt; 仓库提交 PR；文件的格式和提交方法见该仓库的 README。'>Most of these translations were bootstrapped with machine translation and have not been reviewed by
                     native speakers, so mistakes and awkward phrasing are expected. If you fix one, open a pull
@@ -65,19 +66,19 @@
                 <p data-zh-html='每条翻译按 &lt;code&gt;bundle&lt;/code&gt;、&lt;code&gt;table&lt;/code&gt; 和 &lt;code&gt;key&lt;/code&gt; 匹配；留空的条目会自动回退到英文，因此部分翻译也可以正常使用。'>Entries are matched by <code>bundle</code>, <code>table</code> and <code>key</code>; empty entries
                     fall back to English, so a partial translation is fine.</p>
             </div>
-        </div>
-    </section>
-
+        </section>
     </main>
 
     <footer>
         <div class="container">
-            <p data-zh-html='Nimble Commander-Fork 是 &lt;a href="https://magnumbytes.com/"&gt;Nimble Commander&lt;/a&gt;（作者 Michael Kazakov）的社区分支。&lt;br&gt;版权所有 © 2026 Michael Kazakov；分支改动 © Nimble Commander-Fork 贡献者。GPLv3。'>Nimble Commander-Fork is a community fork of <a href="https://magnumbytes.com/">Nimble Commander</a>
+            <p data-zh-html='Nimble Commander-Fork 是 &lt;a href="https://magnumbytes.com/"&gt;Nimble Commander&lt;/a&gt;（作者 Michael Kazakov）的社区分支。&lt;br&gt;版权所有 © 2026 Michael Kazakov；分支改动 © Nimble Commander-Fork 贡献者。GPLv3&amp;nbsp;·&amp;nbsp;&lt;a href="../privacy/"&gt;隐私政策&lt;/a&gt;'>Nimble Commander-Fork is a community fork of <a href="https://magnumbytes.com/">Nimble Commander</a>
                 by Michael Kazakov.<br>Copyright © 2026 Michael Kazakov; fork changes © the Nimble Commander-Fork
-                contributors. GPLv3.</p>
+                contributors. GPLv3&nbsp;·&nbsp;<a href="../privacy/">Privacy</a></p>
         </div>
     </footer>
-    <script src="../js/language-picker.js?v=5abf2cab"></script>
+
+    <script src="../js/nav.js?v=20261127" defer></script>
+    <script src="../js/language-picker.js?v=20261127" defer></script>
 </body>
 
 </html>

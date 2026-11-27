@@ -3,38 +3,42 @@
  * The HTML keeps a static fallback so the page still works when the API is unavailable,
  * rate-limited or blocked; a failed request simply leaves the fallback in place.
  */
-(function () {
+(() => {
     'use strict';
 
-    var API = 'https://api.github.com/repos/cfanmaoli/nimble-commander/releases/latest';
+    const API = 'https://api.github.com/repos/cfanmaoli/nimble-commander/releases/latest';
 
     function apply(version) {
-        var nodes = document.querySelectorAll('.nc_release_version');
-        for (var i = 0; i < nodes.length; i++) {
-            nodes[i].textContent = version;
+        for (const node of document.querySelectorAll('.nc_release_version')) {
+            node.textContent = version;
         }
     }
 
-    function request() {
+    async function request() {
         if (!document.querySelector('.nc_release_version')) return;
         if (typeof window.fetch !== 'function') return;
-        window.fetch(API, {
+
+        const options = {
             headers: { Accept: 'application/vnd.github+json' },
-            cache: 'no-store'
-        }).then(function (response) {
-            if (!response.ok) throw new Error('GitHub API returned ' + response.status);
-            return response.json();
-        }).then(function (release) {
-            var version = String((release && release.tag_name) || '').replace(/^v/i, '');
-            // Keep the value safe for textContent; ignore malformed tags.
+            cache: 'no-store',
+        };
+        if (typeof AbortSignal?.timeout === 'function') {
+            options.signal = AbortSignal.timeout(8000);
+        }
+
+        try {
+            const response = await window.fetch(API, options);
+            if (!response.ok) return;
+            const release = await response.json();
+            const version = String(release?.tag_name ?? '').replace(/^v/i, '');
             if (/^[0-9][0-9A-Za-z.+-]*$/.test(version)) apply(version);
-        }).catch(function () {
+        } catch {
             /* keep the static fallback */
-        });
+        }
     }
 
     if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', request, false);
+        document.addEventListener('DOMContentLoaded', request, { once: true });
     } else {
         request();
     }

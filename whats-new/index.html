@@ -3,46 +3,89 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
     <meta name="description" content="Release notes for Nimble Commander-Fork." data-zh="Nimble Commander-Fork 的发行说明。">
     <meta name="author" content="Nimble Commander-Fork contributors">
     <title data-zh="更新内容 - Nimble Commander-Fork">What's new - Nimble Commander-Fork</title>
-    <link rel="stylesheet" href="../css/style.css?v=faf4715b">
+    <link rel="stylesheet" href="../css/style.css?v=20261127">
     <link rel="icon" href="../favicon.ico" type="image/x-icon">
-    <script src="../js/i18n.js?v=1741791a"></script>
+    <script src="../js/i18n.js?v=20261127"></script>
 </head>
 
 <body>
-    <header>
-        <div class="container">
-            <div id="branding">
-                <a href="../">
-                    <h1>Nimble Commander-Fork</h1>
-                </a>
-            </div>
-            <nav id="header_links">
-                <ul>
+    <a href="#main-heading" class="skip-link visually-hidden" data-zh="跳至正文">Skip to content</a>
+
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="site-brand" href="../">Nimble Commander-Fork</a>
+            <nav class="site-nav" aria-label="Primary" data-zh-aria-label="主导航">
+                <button class="menu-button" type="button" popovertarget="site-menu" popovertargetaction="toggle" aria-controls="site-menu">
+                    <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                        <path d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                    <span data-zh="菜单">Menu</span>
+                </button>
+                <ul id="site-menu" class="site-menu" popover="auto">
                     <li><a href="../download/" data-zh="下载">Download</a></li>
                     <li><a href="../languages/" data-zh="语言">Languages</a></li>
-                    <li><a href="../whats-new/" data-zh="更新内容">What's new</a></li>
+                    <li><a href="../whats-new/" aria-current="page" data-zh="更新内容">What's new</a></li>
                     <li><a href="../support/" data-zh="支持">Support</a></li>
-                    <li><a href="#" id="nc_lang_toggle" class="lang_toggle">中文</a></li>
+                    <li><button type="button" id="nc_lang_toggle" class="lang_toggle" lang="zh-Hans" aria-label="切换到简体中文">中文</button></li>
                 </ul>
             </nav>
         </div>
     </header>
-    <div id="header_fix_space"></div>
 
     <main>
-        <section>
-            <div class="container prose" id="whats_new">
-                <h2 class="section_header" data-zh="更新历史">History of changes</h2>
+        <section class="section_band" id="whats_new">
+            <div class="prose">
+                <h1 id="main-heading" class="section_header" tabindex="-1" data-zh="更新历史">History of changes</h1>
 
                 <p data-zh-html='完整且始终最新的列表位于 &lt;a href="https://github.com/cfanmaoli/nimble-commander/blob/main/WHATS_NEW.md"&gt;WHATS_NEW.md&lt;/a&gt;，以及&lt;a href="https://github.com/cfanmaoli/nimble-commander/releases"&gt;发布页面&lt;/a&gt;。'>The complete, always up-to-date list lives in
                     <a href="https://github.com/cfanmaoli/nimble-commander/blob/main/WHATS_NEW.md">WHATS_NEW.md</a>
                     and on the <a href="https://github.com/cfanmaoli/nimble-commander/releases">releases page</a>.</p>
 
-                <h3 data-zh="1.9.3c（2026）：">1.9.3c (2026):</h3>
+                <h2 class="release_version" data-zh="2.0（2026）：">2.0 (2026):</h2>
+                <ul>
+                    <li data-zh="最低系统要求提升至 macOS 13 Ventura；移除了内置 Sparkle 框架中未使用的 x86_64 架构切片。">Minimum supported macOS raised to 13 Ventura; removed the unused x86_64 slice from the
+                        bundled Sparkle framework.</li>
+                    <li data-zh-html='流式加载与导航改进：切换目录时会在下一批读取处立即中断正在进行的流式目录加载（包括管理员模式下的 &lt;code&gt;readdir&lt;/code&gt; 扫描），追加更新时保持列表视口位置不跳动，未完整加载的目录会明确标记，并修复空目录流式加载和在 &lt;code&gt;..&lt;/code&gt; 上按回车跳回当前目录的问题。'>Responsive streaming navigation: navigating now interrupts an in-progress streaming
+                        directory load at the next fetch batch (including Admin Mode <code>readdir</code> scans),
+                        the list viewport stays anchored during append-only updates, partially streamed
+                        directories are marked as incomplete, and empty-directory streaming and pressing Enter
+                        on <code>..</code> are fixed.</li>
+                    <li data-zh-html='更快的异步缩略图：从 &lt;code&gt;QLThumbnailImageCreate&lt;/code&gt; 迁移至完全异步的 QuickLookThumbnailing，并加入等待上限与关闭面板即时取消，避免界面卡顿；图片密集目录通过 ImageIO 直接按原始宽高比解码 64 MiB 以内的缩略图并加入内存缓存。'>Faster, non-blocking thumbnails: migrated from <code>QLThumbnailImageCreate</code> to
+                        fully asynchronous QuickLookThumbnailing with bounded waits and immediate teardown
+                        cancellation so closing a panel never stalls the UI; image-heavy directories decode
+                        images up to 64 MiB directly via ImageIO at their true aspect ratio with memory caching.</li>
+                    <li data-zh-html='管理员模式现代化改造：特权助手从已弃用的 &lt;code&gt;SMJobBless&lt;/code&gt; 迁移至应用内置的 &lt;code&gt;SMAppService&lt;/code&gt;，首次启用时引导在&lt;em&gt;系统设置 → 通用 → 登录项与扩展&lt;/em&gt;中批准，并自动清理旧版助手文件；管理员模式现在优先尝试直接 POSIX I/O，仅在遇到 &lt;code&gt;EACCES&lt;/code&gt;/&lt;code&gt;EPERM&lt;/code&gt; 时才提权，无需完全磁盘访问权限即可正常访问受 TCC 保护的文件夹与可移动卷（含 RAR 等归档）。'>Modernized Admin Mode: migrated the privileged helper from deprecated
+                        <code>SMJobBless</code> to <code>SMAppService</code> inside the app bundle with guided
+                        approval in <em>System Settings → General → Login Items &amp; Extensions</em> and
+                        automatic cleanup of legacy helper files; Admin Mode now tries direct POSIX I/O first
+                        and escalates only on <code>EACCES</code>/<code>EPERM</code>, keeping TCC-protected
+                        folders and removable volumes (including archives) accessible without Full Disk Access.</li>
+                    <li data-zh="复制与拖放改进：移除 MD2/MD4/MD5，复制校验（含空文件）和临时文件变更检测统一改用 SHA-256，校验不匹配时会中止操作而不再报告成功；支持 APFS 克隆与可取消的复制扫描，修复拖入文件的安全作用域 URL 有效期和 promised-file 写入问题。">Copy and drag improvements: removed MD2/MD4/MD5 in favour of SHA-256 for copy
+                        verification (including empty files) and temporary-file change detection, stopping the
+                        operation on mismatches; added APFS clones and cancellable copy scans, and fixed
+                        security-scoped drag-in URLs and promised-file writes.</li>
+                    <li data-zh-html='在线用户手册：“帮助”菜单现在改为在默认浏览器中打开 &lt;a href="https://github.com/cfanmaoli/nimble-commander/blob/main/Docs/Help.md"&gt;Docs/Help.md&lt;/a&gt;，不再在应用包内附带 &lt;code&gt;Help.pdf&lt;/code&gt;。'>Online user guide: the Help menu now opens
+                        <a href="https://github.com/cfanmaoli/nimble-commander/blob/main/Docs/Help.md">Docs/Help.md</a>
+                        in the default browser instead of bundling <code>Help.pdf</code> inside the app.</li>
+                    <li data-zh="系统 API 与界面现代化：LaunchServices UTType 迁移至 UniformTypeIdentifiers，共享菜单改用锚定到所选行的系统共享面板；移除 LetsMove、不再受支持的访达收藏夹导入以及大部分 Carbon 键码依赖；取消“清倒废纸篓”快捷键，并将按住 Option 时的“永久删除”高亮为红色。">Modernized macOS APIs and UI: migrated LaunchServices UTType to
+                        UniformTypeIdentifiers, replaced the legacy Share menu with the system sharing picker
+                        anchored to the selected row, removed LetsMove, the unsupported Finder-favorites
+                        importer and most Carbon keycode dependencies, removed the keyboard shortcut from Empty
+                        Trash, and highlighted Option-Delete Permanently in red.</li>
+                    <li data-zh-html='稳定性修复：FSEvents 监听器确保上下文存活并在主线程同步失效，面板加载与列表恢复由导航纪元保护，设置导入在重新校验后原子生效，并修复了管理员模式 &lt;code&gt;stat&lt;/code&gt; 时间戳映射和中止压缩时的重复清理问题。'>Reliability fixes: FSEvents watchers keep their context alive and invalidate
+                        synchronously on the main thread, panel loads and listing restores are guarded by
+                        navigation epochs, settings import applies atomically after revalidation, and Admin
+                        Mode <code>stat</code> timestamp mapping and stopped-compression cleanup were fixed.</li>
+                    <li data-zh="此版本使用开发证书签名，可以正常打开管理员模式。">This release is signed with a development certificate, so Administrator Mode can be enabled
+                        normally.</li>
+                </ul>
+
+                <h2 class="release_version" data-zh="1.9.3c（2026）：">1.9.3c (2026):</h2>
                 <ul>
                     <li data-zh-html='修复语言导出：English 导出现在包含完整译文，导出的 1488 条不再有 1346 条空译文或 934 条 IB 对象标识符；导出当前语言包时会导出该包自己的文本（而不是系统语言），&lt;code&gt;baseLanguage&lt;/code&gt; 固定为 &lt;code&gt;en&lt;/code&gt;。'>Fixed language export: an English export now contains complete translations instead of 1346
                         empty values and 934 Interface Builder identifiers, and exporting an active
@@ -56,7 +99,7 @@
                         normally.</li>
                 </ul>
 
-                <h3 data-zh="1.9.3b（2026）：">1.9.3b (2026):</h3>
+                <h2 class="release_version" data-zh="1.9.3b（2026）：">1.9.3b (2026):</h2>
                 <ul>
                     <li data-zh-html='新增“导入设置”：在 &lt;em&gt;设置 → 通用&lt;/em&gt; 中可从原版 Nimble Commander 导入偏好设置、已保存的标签页、网络连接、语言包和语法高亮；导入前会备份当前设置，应用重启后生效。'>New “Import settings”: <em>Preferences → General</em> can import preferences, saved tabs,
                         network connections, language packs and syntax highlighting from the original
@@ -74,13 +117,13 @@
                         normally.</li>
                 </ul>
 
-                <h3 data-zh="1.9.3a（2026）：">1.9.3a (2026):</h3>
+                <h2 class="release_version" data-zh="1.9.3a（2026）：">1.9.3a (2026):</h2>
                 <ul>
                     <li data-zh-html='回收站更安全：清空时拒绝经过符号链接或挂载点的 &lt;code&gt;.Trashes&lt;/code&gt; 链，并通过固定的目录描述符删除；“放回原处”会重新校验解析后的目标路径。'>Safer Trash: emptying refuses a <code>.Trashes</code> chain that leads through a symlink or a
                         mount point and deletes through pinned directory descriptors; “Put Back” re-checks
                         the resolved destination.</li>
                     <li data-zh="目录在读取过程中发生变化时，追加的条目始终按显示比较器排序——非 ASCII 名称和显示名不同的条目不会再排错位置。">When a directory changes while it is being read, the appended entries are always sorted with
-                        the display comparator - names with non-ASCII characters or a different display form
+                        the display comparator — names with non-ASCII characters or a different display form
                         can no longer land in the wrong place.</li>
                     <li data-zh="修复卷卸载与后台目录监听注册之间的死锁。">Fixed a deadlock between the volume-unmount handler and background watch registration.</li>
                     <li data-zh="RAR 组件加固：协议版本协商、list/link/read 超时上限、启动时不继承应用的打开描述符；组件失败时自动回落到内置读取器。">RAR component hardening: protocol negotiation, bounded list/link/read timeouts, no inherited
@@ -93,7 +136,7 @@
                         enabled normally.</li>
                 </ul>
 
-                <h3 data-zh="1.9.3（2026）：">1.9.3 (2026):</h3>
+                <h2 class="release_version" data-zh="1.9.3（2026）：">1.9.3 (2026):</h2>
                 <ul>
                     <li data-zh-html='通过独立的 &lt;code&gt;ncrar-helper&lt;/code&gt; 组件提供可选 RAR 支持：固实归档、加密的文件头和数据、分卷集合；在&lt;em&gt;设置 → 压缩&lt;/em&gt;中有一个开关，并显示该组件的状态和版本。'>Optional RAR support through the separate <code>ncrar-helper</code> component: solid
                         archives, encrypted headers and payloads, multi-volume sets; a single switch in
@@ -105,7 +148,7 @@
                         <a href="https://github.com/cfanmaoli/nc-language">nc-language</a> repository.</li>
                 </ul>
 
-                <h3 data-zh="1.9.2 及更早版本：">1.9.2 and earlier:</h3>
+                <h2 class="release_version" data-zh="1.9.2 及更早版本：">1.9.2 and earlier:</h2>
                 <ul>
                     <li data-zh="开箱即用的简体中文本地化（约 1,460 条字符串）。">Simplified Chinese localization out of the box (about 1,460 strings).</li>
                     <li data-zh="语言包：导出当前界面字符串、导入翻译、无需重新构建应用即可切换语言。">Language packs: export the current interface strings, import a translation, switch
@@ -123,11 +166,13 @@
 
     <footer>
         <div class="container">
-            <p data-zh-html='Nimble Commander-Fork 是 &lt;a href="https://magnumbytes.com/"&gt;Nimble Commander&lt;/a&gt;（作者 Michael Kazakov）的社区分支。&lt;br&gt;版权所有 © 2026 Michael Kazakov；分支改动 © Nimble Commander-Fork 贡献者。GPLv3。'>Nimble Commander-Fork is a community fork of <a href="https://magnumbytes.com/">Nimble Commander</a>
+            <p data-zh-html='Nimble Commander-Fork 是 &lt;a href="https://magnumbytes.com/"&gt;Nimble Commander&lt;/a&gt;（作者 Michael Kazakov）的社区分支。&lt;br&gt;版权所有 © 2026 Michael Kazakov；分支改动 © Nimble Commander-Fork 贡献者。GPLv3&amp;nbsp;·&amp;nbsp;&lt;a href="../privacy/"&gt;隐私政策&lt;/a&gt;'>Nimble Commander-Fork is a community fork of <a href="https://magnumbytes.com/">Nimble Commander</a>
                 by Michael Kazakov.<br>Copyright © 2026 Michael Kazakov; fork changes © the Nimble Commander-Fork
-                contributors. GPLv3.</p>
+                contributors. GPLv3&nbsp;·&nbsp;<a href="../privacy/">Privacy</a></p>
         </div>
     </footer>
+
+    <script src="../js/nav.js?v=20261127" defer></script>
 </body>
 
 </html>

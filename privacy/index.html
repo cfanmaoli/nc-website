@@ -3,40 +3,44 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
     <meta name="description" content="Privacy policy for Nimble Commander-Fork." data-zh="Nimble Commander-Fork 的隐私政策。">
     <meta name="author" content="Nimble Commander-Fork contributors">
     <title data-zh="隐私政策 - Nimble Commander-Fork">Privacy policy - Nimble Commander-Fork</title>
-    <link rel="stylesheet" href="../css/style.css?v=faf4715b">
+    <link rel="stylesheet" href="../css/style.css?v=20261127">
     <link rel="icon" href="../favicon.ico" type="image/x-icon">
-    <script src="../js/i18n.js?v=1741791a"></script>
+    <script src="../js/i18n.js?v=20261127"></script>
 </head>
 
 <body>
-    <header>
-        <div class="container">
-            <div id="branding">
-                <a href="../">
-                    <h1>Nimble Commander-Fork</h1>
-                </a>
-            </div>
-            <nav id="header_links">
-                <ul>
+    <a href="#main-heading" class="skip-link visually-hidden" data-zh="跳至正文">Skip to content</a>
+
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="site-brand" href="../">Nimble Commander-Fork</a>
+            <nav class="site-nav" aria-label="Primary" data-zh-aria-label="主导航">
+                <button class="menu-button" type="button" popovertarget="site-menu" popovertargetaction="toggle" aria-controls="site-menu">
+                    <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                        <path d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                    <span data-zh="菜单">Menu</span>
+                </button>
+                <ul id="site-menu" class="site-menu" popover="auto">
                     <li><a href="../download/" data-zh="下载">Download</a></li>
                     <li><a href="../languages/" data-zh="语言">Languages</a></li>
                     <li><a href="../whats-new/" data-zh="更新内容">What's new</a></li>
                     <li><a href="../support/" data-zh="支持">Support</a></li>
-                    <li><a href="#" id="nc_lang_toggle" class="lang_toggle">中文</a></li>
+                    <li><button type="button" id="nc_lang_toggle" class="lang_toggle" lang="zh-Hans" aria-label="切换到简体中文">中文</button></li>
                 </ul>
             </nav>
         </div>
     </header>
-    <div id="header_fix_space"></div>
 
-    <section>
-        <div class="container prose">
-            <h2 class="section_header" data-zh="隐私政策">Privacy Policy</h2>
-            <div>
+    <main>
+        <section class="section_band">
+            <div class="prose">
+                <h1 id="main-heading" class="section_header" tabindex="-1" data-zh="隐私政策">Privacy Policy</h1>
                 <p data-zh="Nimble Commander-Fork 是一个桌面应用，也是一个静态网站。该应用不会收集、传输或出售任何个人数据：它不含分析工具、遥测和广告。它的设置、语言包以及可选的 RAR 组件都只保留在你的 Mac 上。">Nimble Commander-Fork is a desktop application and a static website. The application does not
                     collect, transmit or sell any personal data: it contains no analytics, no telemetry and no
                     advertising. Its settings, language packs and the optional RAR component stay on your Mac.</p>
@@ -50,16 +54,18 @@
                 <p data-zh-html='如果你对本政策有疑问，请在 &lt;a href="https://github.com/cfanmaoli/nimble-commander/issues"&gt;GitHub&lt;/a&gt; 上提交议题。'>If you have questions about this policy, open an issue on
                     <a href="https://github.com/cfanmaoli/nimble-commander/issues">GitHub</a>.</p>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <footer>
         <div class="container">
-            <p data-zh-html='Nimble Commander-Fork 是 &lt;a href="https://magnumbytes.com/"&gt;Nimble Commander&lt;/a&gt;（作者 Michael Kazakov）的社区分支。&lt;br&gt;版权所有 © 2026 Michael Kazakov；分支改动 © Nimble Commander-Fork 贡献者。GPLv3。'>Nimble Commander-Fork is a community fork of <a href="https://magnumbytes.com/">Nimble Commander</a>
+            <p data-zh-html='Nimble Commander-Fork 是 &lt;a href="https://magnumbytes.com/"&gt;Nimble Commander&lt;/a&gt;（作者 Michael Kazakov）的社区分支。&lt;br&gt;版权所有 © 2026 Michael Kazakov；分支改动 © Nimble Commander-Fork 贡献者。GPLv3&amp;nbsp;·&amp;nbsp;&lt;a href="../privacy/" aria-current="page"&gt;隐私政策&lt;/a&gt;'>Nimble Commander-Fork is a community fork of <a href="https://magnumbytes.com/">Nimble Commander</a>
                 by Michael Kazakov.<br>Copyright © 2026 Michael Kazakov; fork changes © the Nimble Commander-Fork
-                contributors. GPLv3.</p>
+                contributors. GPLv3&nbsp;·&nbsp;<a href="../privacy/" aria-current="page">Privacy</a></p>
         </div>
     </footer>
+
+    <script src="../js/nav.js?v=20261127" defer></script>
 </body>
 
 </html>

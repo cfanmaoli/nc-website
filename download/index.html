@@ -3,101 +3,124 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <meta name="description" content="Download Nimble Commander-Fork, a community fork of the classic dual-pane Mac file manager.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
+    <meta name="description" content="Download Nimble Commander-Fork, a community fork of the classic dual-pane Mac file manager." data-zh="下载 Nimble Commander-Fork —— 经典双窗格 Mac 文件管理器的社区分支。">
     <meta name="author" content="Nimble Commander-Fork contributors">
     <title data-zh="下载 - Nimble Commander-Fork">Download - Nimble Commander-Fork</title>
-    <link rel="stylesheet" href="../css/style.css?v=faf4715b">
+    <link rel="stylesheet" href="../css/style.css?v=20261127">
     <link rel="icon" href="../favicon.ico" type="image/x-icon">
-    <script src="../js/i18n.js?v=1741791a"></script>
+    <script src="../js/i18n.js?v=20261127"></script>
 </head>
 
 <body>
-    <header>
-        <div class="container">
-            <div id="branding">
-                <a href="../">
-                    <h1>Nimble Commander-Fork</h1>
-                </a>
-            </div>
-            <nav id="header_links">
-                <ul>
-                    <li><a href="../download/" data-zh="下载">Download</a></li>
+    <a href="#main-heading" class="skip-link visually-hidden" data-zh="跳至正文">Skip to content</a>
+
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="site-brand" href="../">Nimble Commander-Fork</a>
+            <nav class="site-nav" aria-label="Primary" data-zh-aria-label="主导航">
+                <button class="menu-button" type="button" popovertarget="site-menu" popovertargetaction="toggle" aria-controls="site-menu">
+                    <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                        <path d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                    <span data-zh="菜单">Menu</span>
+                </button>
+                <ul id="site-menu" class="site-menu" popover="auto">
+                    <li><a href="../download/" aria-current="page" data-zh="下载">Download</a></li>
                     <li><a href="../languages/" data-zh="语言">Languages</a></li>
                     <li><a href="../whats-new/" data-zh="更新内容">What's new</a></li>
                     <li><a href="../support/" data-zh="支持">Support</a></li>
-                    <li><a href="#" id="nc_lang_toggle" class="lang_toggle">中文</a></li>
+                    <li><button type="button" id="nc_lang_toggle" class="lang_toggle" lang="zh-Hans" aria-label="切换到简体中文">中文</button></li>
                 </ul>
             </nav>
         </div>
     </header>
-    <div id="header_fix_space"></div>
 
     <main>
+        <section class="section_band" id="direct_download">
+            <div class="prose">
+                <h1 id="main-heading" class="section_header" tabindex="-1" data-zh="直接下载">Direct download</h1>
+                <p class="download_meta"><span data-zh="最新版本">Latest release </span><span data-zh="（">(</span><span class="nc_release_version">2.0</span><span data-zh="）">)</span><span data-zh=" .dmg 约 9 MB · 需要 macOS 13 或更新版本 · Apple Silicon"> · .dmg about 9 MB &middot; macOS 13 or later &middot; Apple Silicon</span></p>
+                <a href="https://github.com/cfanmaoli/nimble-commander/releases/latest" class="download_direct hrefbutton_common" data-zh="下载">Download</a>
+                <p class="download_note" data-zh-html='.dmg 和用于校验的 .sha256 文件都在 &lt;a href="https://github.com/cfanmaoli/nimble-commander/releases"&gt;GitHub Releases&lt;/a&gt; 上。'>The .dmg and its .sha256 checksum are published on
+                    <a href="https://github.com/cfanmaoli/nimble-commander/releases">GitHub Releases</a>.</p>
+            </div>
+        </section>
 
-    <section>
-        <div class="container prose" id="direct_download">
-            <h2 class="section_header" data-zh="直接下载">Direct download</h2>
-            <p class="download_meta"><span data-zh="最新版本">Latest release </span><span data-zh="（">(</span><span class="nc_release_version">1.9.3c</span><span data-zh="）">)</span><span data-zh=" .dmg 约 12 MB · 需要 macOS 12 或更新版本 · Apple Silicon"> · .dmg about 12 MB &middot; macOS 12 or later &middot; Apple Silicon</span></p>
-            <a href="https://github.com/cfanmaoli/nimble-commander/releases/latest"
-                class="download_direct hrefbutton_common" data-zh="下载">DOWNLOAD</a>
-            <p class="download_note" data-zh-html='.dmg 和用于校验的 .sha256 文件都在 &lt;a href="https://github.com/cfanmaoli/nimble-commander/releases"&gt;GitHub Releases&lt;/a&gt; 上。'>The .dmg and its .sha256 checksum are published on
-                <a href="https://github.com/cfanmaoli/nimble-commander/releases">GitHub Releases</a>.</p>
-        </div>
-    </section>
-
-    <section>
-        <div id="installation_and_uninstallation">
-            <div class="container prose">
+        <section class="section_band section_band--tinted" id="installation_and_uninstallation">
+            <div class="prose">
                 <h2 class="section_header" data-zh="安装与卸载">Installation and uninstallation</h2>
                 <div class="card_grid">
                     <div class="card">
                         <h3 data-zh="安装">To install</h3>
-                        <p data-zh-html='打开下载的 .dmg，把“Nimble Commander-Fork.app”拖进“应用程序”文件夹。'>Open the downloaded .dmg and drag “Nimble Commander-Fork.app” into the
-                            Applications folder.</p>
+                        <p data-zh="打开下载的 .dmg，把“Nimble Commander-Fork.app”拖进“应用程序”文件夹。">Open the downloaded .dmg and drag “Nimble Commander-Fork.app” into the Applications folder.</p>
                     </div>
                     <div class="card">
                         <h3 data-zh="卸载">To uninstall</h3>
-                        <p data-zh-html='在 Finder 的“应用程序”中选中该应用，然后选择“移到废纸篓”。'>Select the app in Applications in Finder and choose “Move to Trash”.</p>
+                        <p data-zh="在 Finder 的“应用程序”中选中该应用，然后选择“移到废纸篓”。">Select the app in Applications in Finder and choose “Move to Trash”.</p>
                     </div>
                 </div>
-                <p class="install_note" data-zh="该构建未经过公证。如果 macOS 在下载后阻止其运行，可以右键点按该应用并选择一次“打开”，或者清除隔离属性：">The build is not notarised. If macOS blocks it after a download, either right-click the app and
-                    choose “Open” once, or clear the quarantine attribute:</p>
-                <pre><code>xattr -dr com.apple.quarantine "/Applications/Nimble Commander-Fork.app"</code></pre>
+                <p class="install_note" data-zh="该构建未经过公证。如果 macOS 在下载后阻止其运行，可以右键点按该应用并选择一次“打开”，或者清除隔离属性：">The build is not notarised. If macOS blocks it after a download, either right-click the app and choose “Open” once, or clear the quarantine attribute:</p>
+                <div class="copyable">
+                    <span class="copy">
+                        <button type="button" class="copy-button" command="--copy" commandfor="cmd-quarantine-app" aria-label="Copy command to clear quarantine for the app" data-zh-aria-label="复制清除应用隔离属性的命令">
+                            <svg class="icon-copy" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="9" y="9" width="13" height="13" rx="2" />
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+                            </svg>
+                            <svg class="icon-check" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M20 6L9 17l-5-5" />
+                            </svg>
+                        </button>
+                        <span class="tip" role="status"></span>
+                    </span>
+                    <pre role="region" aria-label="Terminal command to clear quarantine for Nimble Commander-Fork" data-zh-aria-label="清除 Nimble Commander-Fork 隔离属性的终端命令" tabindex="0"><code id="cmd-quarantine-app">xattr -dr com.apple.quarantine "/Applications/Nimble Commander-Fork.app"</code></pre>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section>
-        <div id="rar_support">
-            <div class="container">
+        <section class="section_band" id="rar_support">
+            <div class="prose">
                 <h2 class="section_header" data-zh="可选的 RAR 支持">Optional RAR support</h2>
-                <p data-zh-html='内置读取器开箱即可读取 RAR 归档。对于固实归档、加密的文件头和分卷集合，请安装独立的 &lt;a href="https://github.com/cfanmaoli/ncrar-helper"&gt;ncrar-helper&lt;/a&gt; 组件：它是一个遵循 UnRAR 许可证的独立程序，因此应用本身依然不含任何专有代码。安装后，在&lt;strong&gt;设置 → 压缩&lt;/strong&gt;中启用它；同一面板会显示它是否已安装以及版本号。'>RAR archives are read by the built-in reader out of the box. For solid archives, encrypted headers
+                <p data-zh-html='内置读取器开箱即可读取 RAR 归档。对于固实归档、加密的文件头和分卷集合，请安装独立的 &lt;a href="https://github.com/cfanmaoli/ncrar-helper"&gt;ncrar-helper&lt;/a&gt; 组件：它是一个独立程序，自身代码采用 MIT 许可证，内置的 UnRAR 源码仍遵循 UnRAR 许可证，因此应用本身依然不含任何专有代码。安装后，在&lt;strong&gt;设置 → 压缩&lt;/strong&gt;中启用它；同一面板会显示它是否已安装以及版本号。'>RAR archives are read by the built-in reader out of the box. For solid archives, encrypted headers
                     and multi-volume sets, install the separate
                     <a href="https://github.com/cfanmaoli/ncrar-helper">ncrar-helper</a> component: it is an
-                    independent program whose own code is MIT-licensed, while the UnRAR sources it bundles remain under the UnRAR license - so the application itself still contains no
+                    independent program whose own code is MIT-licensed, while the UnRAR sources it bundles remain under the UnRAR license — so the application itself still contains no
                     proprietary code. After installing it, enable it in
                     <strong>Preferences → Compression</strong>; the same pane shows whether it is installed and
                     which version it is.</p>
                 <p class="install_note" data-zh="该组件同样未经过公证，如果被 macOS 隔离，可以清除它的隔离属性：">The component is not notarised either; if macOS quarantines it, clear the attribute as well:</p>
-                <pre><code>xattr -dr com.apple.quarantine /Applications/ncrar-helper.app</code></pre>
+                <div class="copyable">
+                    <span class="copy">
+                        <button type="button" class="copy-button" command="--copy" commandfor="cmd-quarantine-rar" aria-label="Copy command to clear quarantine for ncrar-helper" data-zh-aria-label="复制清除 ncrar-helper 隔离属性的命令">
+                            <svg class="icon-copy" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="9" y="9" width="13" height="13" rx="2" />
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+                            </svg>
+                            <svg class="icon-check" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M20 6L9 17l-5-5" />
+                            </svg>
+                        </button>
+                        <span class="tip" role="status"></span>
+                    </span>
+                    <pre role="region" aria-label="Terminal command to clear quarantine for ncrar-helper" data-zh-aria-label="清除 ncrar-helper 隔离属性的终端命令" tabindex="0"><code id="cmd-quarantine-rar">xattr -dr com.apple.quarantine /Applications/ncrar-helper.app</code></pre>
+                </div>
             </div>
-        </div>
-    </section>
-
-
-
+        </section>
     </main>
-
-    <script src="../js/release.js?v=20261122"></script>
 
     <footer>
         <div class="container">
-            <p data-zh-html='Nimble Commander-Fork 是 &lt;a href="https://magnumbytes.com/"&gt;Nimble Commander&lt;/a&gt;（作者 Michael Kazakov）的社区分支。&lt;br&gt;版权所有 © 2026 Michael Kazakov；分支改动 © Nimble Commander-Fork 贡献者。GPLv3。'>Nimble Commander-Fork is a community fork of <a href="https://magnumbytes.com/">Nimble Commander</a>
+            <p data-zh-html='Nimble Commander-Fork 是 &lt;a href="https://magnumbytes.com/"&gt;Nimble Commander&lt;/a&gt;（作者 Michael Kazakov）的社区分支。&lt;br&gt;版权所有 © 2026 Michael Kazakov；分支改动 © Nimble Commander-Fork 贡献者。GPLv3&amp;nbsp;·&amp;nbsp;&lt;a href="../privacy/"&gt;隐私政策&lt;/a&gt;'>Nimble Commander-Fork is a community fork of <a href="https://magnumbytes.com/">Nimble Commander</a>
                 by Michael Kazakov.<br>Copyright © 2026 Michael Kazakov; fork changes © the Nimble Commander-Fork
-                contributors. GPLv3.</p>
+                contributors. GPLv3&nbsp;·&nbsp;<a href="../privacy/">Privacy</a></p>
         </div>
     </footer>
+
+    <script src="../js/nav.js?v=20261127" defer></script>
+    <script src="../js/copy.js?v=20261127" defer></script>
+    <script src="../js/release.js?v=20261127" defer></script>
 </body>
 
 </html>
